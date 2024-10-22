@@ -19,13 +19,17 @@ public class ProductController {
     }
 
     private List<Product> list = new ArrayList<>();
-// Creating a class which is intersted in requests and response. sEPARATION OF Concern
 
     @PostMapping("addProduct")
     public List<Product> newProduct(@RequestBody Product product)
     {
-        //send it to do business logic
         list = myService.addProduct(product);
+        return list;
+    }
+    @PutMapping("updateProduct/{id}")
+    public List<Product> updateProduct(@PathVariable int id, @RequestBody Product product)
+    {
+        list = myService.updateProduct(id,product);
         return list;
     }
 }

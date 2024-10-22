@@ -19,4 +19,16 @@ public class ProductServices {
         myList.add(product);
         return myList;
     }
+
+    public  List<Product> updateProduct(int id, Product product)
+    {
+        for(Product p : myList){
+            if(p.getId() == id)
+            {
+                myList.remove(p);
+            }
+        }
+        myList.add(product);
+        return myList;
+    }
 }
