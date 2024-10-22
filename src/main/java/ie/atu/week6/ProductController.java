@@ -32,4 +32,11 @@ public class ProductController {
         list = myService.updateProduct(id,product);
         return list;
     }
+
+    @DeleteMapping("deleteProduct/{id}")
+    public List<Product> deleteProduct(@PathVariable int id)
+    {
+        list = myService.deleteProduct(id);
+        return list;
+    }
 }
